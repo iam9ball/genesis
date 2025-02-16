@@ -1,3 +1,4 @@
+'use client'
 import { cn } from "@/lib/utils";
 import { LucideIcon } from "lucide-react";
 import Link from "next/link";
@@ -27,7 +28,7 @@ const SidebarItem = ({ icon, title, href, selected, notifications }: Props) => {
                 {title}
             </span>
         </div>
-        
+
       </Link>
     </li>
   );

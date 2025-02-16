@@ -1,3 +1,4 @@
+'use client'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -56,7 +57,7 @@ const SearchUser = ({ workspaceId }: Props) => {
           </div>
           <div className="flex-1 flex justify-end items-center">
             <Button onClick={() => {}} variant={"default"} className="w-5/12 font-bold">
-               <Loader /> 
+               {/* <Loader />   Invite */}
             </Button>
           </div>
         </div>

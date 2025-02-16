@@ -8,15 +8,14 @@ export type WorkspaceProps = {
       name: string;
       type: "PUBLIC" | "PERSONAL";
     }[];
-    members: [
+    members: 
       {
         workspace: {
           id: string;
           name: string;
           type: "PUBLIC" | "PERSONAL";
         };
-      }
-    ];
+      }[]
   };
 };
 
