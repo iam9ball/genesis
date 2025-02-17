@@ -1,9 +1,14 @@
-import { MutateFunction, MutationKey, useMutation, useQueryClient } from "@tanstack/react-query";
+import {
+  MutationFunction,
+  MutationKey,
+  useMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { toast } from "sonner";
 
 export const useMutationData = (
   mutationKey: MutationKey,
-  mutationFn: MutateFunction<any, any>,
+  mutationFn: MutationFunction<any, any>,
   queryKey?: string,
   onSuccess?: () => void
 ) => {
