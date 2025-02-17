@@ -17,9 +17,9 @@ const CreateWorkspace = () => {
 
     const { data: plan } = data as UserWorkspaces;
 
-    // if (plan.subscription?.plan === "FREE") {
-    //     return <></>
-    // }
+    if (plan.subscription?.plan === "FREE") {
+        return <></>
+    }
 
   return (
     <Modal 

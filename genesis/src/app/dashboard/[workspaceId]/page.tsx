@@ -1,6 +1,8 @@
+import CreateFolders from "@/app/_components/global/folders/CreateFolders";
 import CreateWorkspace from "@/app/_components/global/CreateWorkspace";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import React from "react";
+import Folders from "@/app/_components/global/folders/Folders";
 
 type Props = {
   params: { workspaceId: string };
@@ -26,8 +28,14 @@ const page = ({ params }: Props) => {
           </TabsList>
           <div className="flex gap-x-3">
             <CreateWorkspace/>
+            <CreateFolders workspaceId={params.workspaceId}/>
           </div>
         </div>
+        <section className="py-9">
+          <TabsContent value="videos">
+            <Folders workspaceId={params.workspaceId}/>
+          </TabsContent>
+        </section>
       </Tabs>
     </div>
   );
