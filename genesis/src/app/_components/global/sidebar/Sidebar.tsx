@@ -15,7 +15,7 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import React, { useMemo } from "react";
 import Modal from "../Modal";
-import { Loader, PlusCircle } from "lucide-react";
+import { Loader, Menu, PlusCircle } from "lucide-react";
 import SearchUser from "../SearchUser";
 import { MENU_ITEMS } from "@/constant";
 import { Item } from "@radix-ui/react-select";
@@ -23,6 +23,7 @@ import SidebarItem from "./SidebarItem";
 import WorkspacePlaceholder from "./WorkspacePlaceholder";
 import Card from "../Card";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 type Props = {
   activeWorkspaceId: string;
@@ -49,7 +50,7 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
 
   const menuItems = MENU_ITEMS(activeWorkspaceId);
 
-  return  (
+  const sidebar = (
     <div className="bg-[#171717] flex-none relative p-4 h-full w-[250px] flex flex-col gap-4 items-center overflow-hidden">
       <div className="flex p-4 gap-2 justify-start items-center mb-4  absolute top-0  left-0 right-0">
         <Image src="/logo/GenesisAI.svg" height={40} width={40} alt="logo" />
@@ -189,6 +190,22 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
           }
         ></Card>
       )}
+    </div>
+  );
+
+  return (
+    <div className="full">
+      <div className="md:hidden fixed my-4">
+        <Sheet>
+          <SheetTrigger asChild className="ml-2">
+            
+            <Menu className="mt-[2px] cursor-pointer"/>
+          </SheetTrigger>
+          <SheetContent side={"left"} className="p-0 w-fit h-full">
+            {sidebar}
+          </SheetContent>
+        </Sheet>
+      </div>
     </div>
   );
 };
