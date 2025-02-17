@@ -1,20 +1,20 @@
-'use client'
-import React from 'react'
+"use client";
+import React from "react";
 import {
-    Card as _Card,
-    CardDescription,
-    CardHeader,
-    CardTitle
-
-} from "@/components/ui/card"
+  Card as _Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 type Props = {
-    title: string;
-    description: string;
-    children: React.ReactNode;
-    footer?: React.ReactNode
-}
-const Card = ({title, children, footer, description}: Props) => {
+  title: string;
+  description: string;
+  children?: React.ReactNode;
+  footer?: React.ReactNode;
+};
+const Card = ({ title, children, footer, description }: Props) => {
   return (
     <_Card className="bg-transparent mt-4">
       <CardHeader className="p-4">
@@ -23,9 +23,10 @@ const Card = ({title, children, footer, description}: Props) => {
           {description}
         </CardDescription>
       </CardHeader>
-      <div className="pt-2">{children}</div>
+      {children && <div className="p-2">{children}</div>}
+      {footer && <CardFooter className="p-2">{footer}</CardFooter>}
     </_Card>
   );
-}
+};
 
-export default Card
+export default Card;

@@ -49,7 +49,7 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
 
   const menuItems = MENU_ITEMS(activeWorkspaceId);
 
-  return (
+  return  (
     <div className="bg-[#171717] flex-none relative p-4 h-full w-[250px] flex flex-col gap-4 items-center overflow-hidden">
       <div className="flex p-4 gap-2 justify-start items-center mb-4  absolute top-0  left-0 right-0">
         <Image src="/logo/GenesisAI.svg" height={40} width={40} alt="logo" />
@@ -138,7 +138,7 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
               : "No  workspaces"}
           </p>
         </div>
-      )} 
+      )}
       <nav className="w-full">
         <ul className="h-[100px] overflow-auto overflow-x-hidden fade-layer ">
           {workspace.workspace.length > 0 &&
@@ -177,12 +177,18 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
             ))}
         </ul>
       </nav>
-      <Separator className="w-4/5"/>
-      {workspace.subscription?.plan === "FREE" && <Card title="Upgrade to PRO" description="Unlock AI features like transcription, AI summary, and more.">
-        <Button className="text-sm w-full mt-1">
-          {/* <Loader/> Upgrade */}
-        </Button>
-        </Card>}
+      <Separator className="w-4/5" />
+      {workspace.subscription?.plan === "FREE" && (
+        <Card
+          title="Upgrade to PRO"
+          description="Unlock AI features like transcription, AI summary, and more."
+          footer={
+            <Button className="text-sm w-full bg-white text-black mt-1">
+              {/* <Loader/> Upgrade */}
+            </Button>
+          }
+        ></Card>
+      )}
     </div>
   );
 };
