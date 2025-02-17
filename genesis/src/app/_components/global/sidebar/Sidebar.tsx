@@ -24,6 +24,7 @@ import WorkspacePlaceholder from "./WorkspacePlaceholder";
 import Card from "../Card";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import InfoBar from "./InfoBar";
 
 type Props = {
   activeWorkspaceId: string;
@@ -195,6 +196,7 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
 
   return (
     <div className="full">
+    <InfoBar/>
       <div className="md:hidden fixed my-4">
         <Sheet>
           <SheetTrigger asChild className="ml-2">
@@ -206,6 +208,7 @@ const Sidebar = ({ activeWorkspaceId }: Props) => {
           </SheetContent>
         </Sheet>
       </div>
+      <div className="md:block hidden h-full">{sidebar}</div>
     </div>
   );
 };
