@@ -27,3 +27,14 @@ export type NotificationProps = {
       }
     } 
 }
+
+export type UserWorkspaces = {
+  
+        status: number
+        data: {
+            subscription: {
+               plan: "FREE" | "PRO"   
+            } | null
+        }
+    
+}
